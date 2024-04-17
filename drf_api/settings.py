@@ -13,8 +13,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+print("Checking whether env.py exists")
 if os.path.exists('env.py'):
+    print("env.py exists")
     import env
+print("os.environ.get('CLOUDINARY_URL')")
 
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
@@ -50,6 +53,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'rest_framework',
 
     'profiles',
 ]
